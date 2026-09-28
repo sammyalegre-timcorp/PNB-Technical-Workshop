@@ -1,0 +1,6 @@
+{
+  "name": "PNB Technical Workshop - Date & Availability Poll",
+  "description": "Availability poll and date tallying tool for the PNB Technical Workshop across October and November schedule options, with topic ideation and consensus reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

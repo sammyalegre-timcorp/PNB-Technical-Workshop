@@ -1,0 +1,56 @@
+{
+  "entities": {
+    "PollConfig": {
+      "title": "PollConfig",
+      "description": "Configuration for the technical workshop date poll",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the poll",
+          "maxLength": 200
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Purpose of the poll/event",
+          "maxLength": 200
+        },
+        "dates": {
+          "type": "array",
+          "description": "List of available date options"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Timestamp of last update"
+        }
+      },
+      "required": ["title", "purpose", "dates"]
+    },
+    "Vote": {
+      "title": "Vote",
+      "description": "An anonymous voter preference response for the workshop dates",
+      "type": "object",
+      "properties": {
+        "selectedDateIds": {
+          "type": "array",
+          "description": "Array of preferred dateOption IDs"
+        },
+        "submittedAt": {
+          "type": "string",
+          "description": "ISO timestamp of submission"
+        }
+      },
+      "required": ["selectedDateIds"]
+    }
+  },
+  "firestore": {
+    "/poll_config/{configId}": {
+      "schema": "PollConfig",
+      "description": "Global poll configuration including title, purpose, and date options"
+    },
+    "/votes/{voteId}": {
+      "schema": "Vote",
+      "description": "Collection of attendee votes"
+    }
+  }
+}
